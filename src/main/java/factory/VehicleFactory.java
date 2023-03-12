@@ -7,7 +7,7 @@ public class VehicleFactory {
             case "Skoda" -> new SkodaFabia().createVehicle(color);
             case "Ford" -> new FordMondeo().createVehicle(color);
             case "Mitsubishi" -> new MitsubishiAsx().createVehicle(color);
-            default -> throw new IllegalArgumentException("Unknown Shape");
+            default -> throw new IllegalArgumentException("Unknown company");
         };
     }
 
@@ -17,7 +17,7 @@ public class VehicleFactory {
             case "Skoda" -> new SkodaFabia();
             case "Ford" -> new FordMondeo();
             case "Mitsubishi" -> new MitsubishiAsx();
-            default -> throw new IllegalArgumentException("Unknown Shape");
+            default -> throw new IllegalArgumentException("Unknown company");
         };
     }
 }

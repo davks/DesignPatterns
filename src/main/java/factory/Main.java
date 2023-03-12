@@ -11,6 +11,7 @@ public class Main {
         Car mitsubishi1 = Car.createMitsubishiAsx("White");
         Car ford1 = Car.createFordMondeo("Blue");
         Car skoda1 = Car.createSkodaFabia("Red");
+        Car ford2 = Car.createCar("Ford", "Yellow");
 
         // Out
         System.out.println(
@@ -23,6 +24,12 @@ public class Main {
                 ford1.getCompany() + " " +
                         ford1.getModel() + " " +
                         ford1.getColor()
+        );
+
+        System.out.println(
+                ford2.getCompany() + " " +
+                        ford2.getModel() + " " +
+                        ford2.getColor()
         );
 
         System.out.println(

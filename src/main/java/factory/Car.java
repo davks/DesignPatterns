@@ -69,4 +69,13 @@ public class Car {
     public static Car createMitsubishiAsx(String color) {
         return new Car("Mitsubishi", "ASX", color, 5, false);
     }
+
+    public static Car createCar(String company, String color) {
+        return switch (company) {
+            case "Skoda" -> new Car("Škoda", "Fabia", color, 5, false);
+            case "Ford" -> new Car("Ford", "Mondeo", color, 4, false);
+            case "Mitsubishi" -> new Car("Mitsubishi", "ASX", color, 5, true);
+            default -> throw new IllegalArgumentException("Unknown company");
+        };
+    }
 }
