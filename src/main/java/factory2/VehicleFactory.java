@@ -1,13 +1,15 @@
-package factory;
+package factory2;
+
+import factory.Vehicle;
 
 public class VehicleFactory {
 
-    public Car vehicle(String company, String color) {
+    public Vehicle vehicle(String company, String color) {
         return switch (company) {
-            case "Skoda" -> new SkodaFabia().createVehicle(color);
+            case "Skoda" ->  new SkodaFabia().createVehicle(color);
             case "Ford" -> new FordMondeo().createVehicle(color);
             case "Mitsubishi" -> new MitsubishiAsx().createVehicle(color);
-            default -> throw new IllegalArgumentException("Unknown company");
+            default -> throw new IllegalArgumentException("Unknown company: " + company);
         };
     }
 
@@ -17,7 +19,7 @@ public class VehicleFactory {
             case "Skoda" -> new SkodaFabia();
             case "Ford" -> new FordMondeo();
             case "Mitsubishi" -> new MitsubishiAsx();
-            default -> throw new IllegalArgumentException("Unknown company");
+            default -> throw new IllegalArgumentException("Unknown company: " + company);
         };
     }
 }
