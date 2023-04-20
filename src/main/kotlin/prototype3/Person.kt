@@ -21,17 +21,17 @@ class Address(
 }
 
 object PersonCache {
-    private val personMap = hashMapOf<String?, prototype2.Person>()
+    private val personMap = hashMapOf<String?, Person>()
 
     fun loadCache() {
-        personMap["1"] = prototype2.Person("Ales Vesely", 25, prototype2.Address("Velka 25", "Prague", "Czech"))
-        personMap["2"] = prototype2.Person("Karel Velky", 21, prototype2.Address("Mala 2", "Brno", "Czech"))
-        personMap["3"] = prototype2.Person("Andrea Krasna", 16, prototype2.Address("U boru 25", "Znojmo", "Czech"))
+        personMap["1"] = Person("Ales Vesely", 25, Address("Velka 25", "Prague", "Czech"))
+        personMap["2"] = Person("Karel Velky", 21, Address("Mala 2", "Brno", "Czech"))
+        personMap["3"] = Person("Andrea Krasna", 16, Address("U boru 25", "Znojmo", "Czech"))
     }
 
-    fun getPerson(key: String): prototype2.Person? {
+    fun getPerson(key: String): Person? {
         val originalPerson = personMap[key]
-        return originalPerson?.copy(address = originalPerson.address.copy())
+        return originalPerson?.clone()
     }
 }
 
@@ -56,7 +56,7 @@ fun main() {
 
     person1?.address?.city = "London"
 
-    println(person1)
-    println(person2)
-    println(person3)
+    println("$person1 ${person1?.address?.city}")
+    println("$person2 ${person2?.address?.city}")
+    println("$person3 ${person3?.address?.city}")
 }
