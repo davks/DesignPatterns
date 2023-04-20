@@ -27,6 +27,8 @@ public class Car implements Cloneable {
         Car clone = (Car) this.clone();
         clone.steeringWheel = this.steeringWheel == null ? null : (SteeringWheel) this.steeringWheel.clone();
         return clone;
+
+        //return new Car(brand, countOfDoors, (SteeringWheel) steeringWheel.clone());
     }
 
     public String getBrand() {
